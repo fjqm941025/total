@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+    <title>Response_E1</title>
+	
+    <style>
+	
+	
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header"> 
+        <h1>사고뭉치 프로젝트</h1>
+      </div>
+	  
+      <div id="content">
+        <h2>사고대응_Edge1</h2>
+			<hr><br><br>
+			<div id="leftbox">
+				<img src="IMG/E1.png" width="400px">
+			</div>
+			<div id="rightbox">
+
+				<input type="text" id="status" value="현재 정상 동작 중입니다" size=30> 
+				<input type="button" id="정상으로돌리기" value="정상 동작으로 돌리기" onClick="alert('정상으로 돌리기')")>
+        <br><br>
+
+				<hr>
+				<form action="" method="POST" id = "light">
+				
+				<select name="Select_light">
+					<option value="" selected disabled hidden >신호등 선택</option>
+					<option value="1">T1</option>
+					<option value="2">T2</option>
+					<option value="3">T3</option>
+					<option value="4">T4</option>
+				</select>
+				
+				<input type="text" name="control_light_time" placeholder="제어할 시간을 입력하세요." size=30> <p>
+          <input type="submit" value="확인">
+          <!-- <button id ="btn">확인</button> -->
+				<!--아래 버튼 : 사고대응 과정 진행 동작 시작-->
+				<!-- <input type="button" id="Reponse_E1_btn" value="확인" onClick="alert('사고대응동작')")>	 -->
+			</form>
+      
+      <!-- <script>
+        const form = document.querySelector('#light'); // .class #id name
+			form.addEventListener("submit", (e) => {
+// ec2올릴시 변경!!!!!!!!!!!!****************
+      var data = {
+        traffic_light: $('select[name=Select_light]').val(),
+        how_many: $('input[name=control_light_time]').val()
+      }
+				fetch("http://localhost:8080/Response_E1", {
+          method: "POST",
+          body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+					}
+				}).then();
+
+			});
+  
+      </script> -->
+
+
+			</div>
+
+      </div>
+    
+      <div id="sidebar">
+	  <img src="IMG/LOGO.png" width="80px">
+        <h4><a href="/">DashBoard</a></h4>
+		<h4>사고대응</h4>
+        <ul>
+          <li><a href="Response_E1.html">Edge1</a></li>
+          <li><a href="Response_E2.html">Edge2</a></li>
+        </ul>
+		
+		<h4>정책변경</h4>
+        <ul>
+          <li><a href="Rule_E1.html">Edge1</a></li>
+          <li><a href="Rule_E2.html">Edge2</a></li>
+        </ul>
+		
+		<h4>로그보기</a></h4>
+			<li><a href="A_Log.html">사고대응</a>
+			<li><a href="NA_Log.html">정책변경</a>
+		
+      </div>
+      <div id="footer">
+        <p>Copyright</p>
+      </div>
+    </div>
+  </body>
+</html>
